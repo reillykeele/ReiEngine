@@ -1,3 +1,15 @@
+# ------ Binaries ------
+**/bin/
+bin-int/
+
+# --------- VS ---------
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+# -------- C++ ---------
 # Prerequisites
 *.d
 
