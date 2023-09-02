@@ -16,12 +16,21 @@ project "ReiEngine"
     targetdir  ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
     objdir     ("%{wks.location}/obj/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "reipch.h"
+    pchsource "%{prj.name}/Source/reipch.cpp"
+
     files 
     { 
         "%{prj.name}/Source/**.h", 
         "%{prj.name}/Source/**.cpp",
         "%{prj.name}/ThirdParty/**.h", 
         "%{prj.name}/ThirdParty/**.cpp" 
+    }
+
+    includedirs
+    {
+        "%{prj.name}/Source",
+        "%{prj.name}/ThirdParty"
     }
 
     filter "system:windows"
@@ -54,6 +63,8 @@ project "Game"
 
     includedirs
     {
+        "%{prj.name}/Source",
+        "%{prj.name}/ThirdParty",
         "%{wks.location}/ReiEngine/Source",
         "%{wks.location}/ReiEngine/ThirdParty"
     }
