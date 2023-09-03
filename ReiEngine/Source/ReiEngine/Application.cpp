@@ -1,19 +1,25 @@
 #include "reipch.h"
-
 #include "Application.h"
 
-namespace ReiEngine {
+namespace ReiEngine 
+{
 
 	Application::Application()
 	{
-		// do stuff!
-		std::cout << "Creating Application" << std::endl;
+		m_Window = new Window(1600, 900);
 	}
 
 	Application::~Application()
 	{
-		
-		std::cout << "Destroying Application" << std::endl;// die
+		delete m_Window;
+	}
+
+	void Application::Run() 
+	{
+		while (true) 
+		{
+			std::cin.get();
+		}
 	}
 
 }

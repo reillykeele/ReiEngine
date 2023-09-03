@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Window.h"
+
 namespace ReiEngine {
 
 	class Application
@@ -7,6 +9,11 @@ namespace ReiEngine {
 	public:
 		Application();
 		virtual ~Application();	
+
+		void Run();
+
+	private:
+		Window* m_Window;
 	};
 
 }
