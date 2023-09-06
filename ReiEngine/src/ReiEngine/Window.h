@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SDL.h>
+// #include <SDL.h>
 
 namespace ReiEngine
 {
@@ -17,6 +17,6 @@ namespace ReiEngine
 		int m_Width;
 		int m_Height;
 
-		SDL_Window* m_Window;
+//		SDL_Window* m_Window;
 	};
 }

@@ -9,16 +9,16 @@ project "Game"
 
     files 
     { 
-        "Source/**.h", 
-        "Source/**.cpp" 
+        "src/**.h", 
+        "src/**.cpp" 
     }
 
     includedirs
     {
-        "Source",
-        "ThirdParty",
-        "%{wks.location}/ReiEngine/Source",
-        "%{wks.location}/ReiEngine/ThirdParty/**"
+        "src",
+        "third_party",
+        "%{wks.location}/ReiEngine/src",
+        "%{wks.location}/ReiEngine/third_party"
     }
 
     links

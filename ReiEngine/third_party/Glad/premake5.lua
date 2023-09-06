@@ -1,43 +1,30 @@
-project "ReiEngine"
+project "Glad"
     kind "StaticLib"
-    language "C++"
-    cppdialect "C++17"
+    language "C"    
     staticruntime "Off"
         
     targetdir  ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
     objdir     ("%{wks.location}/obj/" .. outputdir .. "/%{prj.name}")
 
-    pchheader "reipch.h"
-    pchsource "src/reipch.cpp"
-
     files 
     { 
-        "src/**.h", 
-        "src/**.cpp",        
+        "include/glad/glad.h",
+        "include/KHR/khrplatform.h",
+        "src/glad.c"
     }
 
     includedirs
     {
-        "src",
-        "third_party/SDL2/include",
-        "third_party/Glad/include"
-    }
-
-    links
-    {
-        "%{Library.SDL2}",
-        "Glad"
-    }
+        "include"
+    }    
 
     filter "system:windows"
         systemversion "latest"
 
     filter "configurations:Debug"
-        defines { "DEBUG" }
         runtime "Debug"
         symbols "On"
     
     filter "configurations:Release"
-        defines { "NDEBUG" }
         runtime "Release"
         optimize "On"
