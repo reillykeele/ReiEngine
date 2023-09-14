@@ -6,19 +6,18 @@
 
 namespace ReiEngine
 {
-
 	class OpenGLRenderContext : public RenderContext
 	{
 	public:
-		OpenGLRenderContext();
+		OpenGLRenderContext(SDL_Window* window);
 		~OpenGLRenderContext();
 
-		virtual void Init() override;
-		virtual void SwapBuffers() override;
+		virtual void Clear() override;
+		virtual void SwapBuffers() override; // TODO: Should this be elsewhere?
 
 	private:
 		SDL_Window* m_Window;
 
-		SDL_GLContext* m_Context;
+		SDL_GLContext m_Context;
 	};
 }

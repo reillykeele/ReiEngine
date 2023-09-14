@@ -6,7 +6,7 @@ namespace ReiEngine
 
 	Application::Application()
 	{
-		m_Window = new Window(1600, 900);
+		m_Window = Window::Create();
 	}
 
 	Application::~Application()
@@ -16,6 +16,7 @@ namespace ReiEngine
 
 	void Application::Run() 
 	{
+		// todo set up a fucking game loop or soemthing
 		while (true) 
 		{
 			std::cin.get();

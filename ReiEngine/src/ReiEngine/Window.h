@@ -1,22 +1,20 @@
 #pragma once
 
-// #include <SDL.h>
-
 namespace ReiEngine
 {
 	class Window
 	{
-	public:
-		Window(int width, int height);
-		virtual ~Window();
+	public:		
+		virtual ~Window() = default;
 
-		inline int GetWidth() { return m_Width; }
-		inline int GetHeight() { return m_Height; }
+		static Window* Create();
 
-	private:
-		int m_Width;
-		int m_Height;
-
-//		SDL_Window* m_Window;
+		virtual void Show() = 0;
+		virtual void Hide() = 0;
+		
+		virtual bool IsVsync() = 0;
+		virtual void SetVsync(bool useVsync) = 0;
+		
+		virtual void Swap() = 0;
 	};
 }

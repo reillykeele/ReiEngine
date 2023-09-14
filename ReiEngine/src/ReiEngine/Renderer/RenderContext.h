@@ -4,8 +4,8 @@ namespace ReiEngine
 {
 	class RenderContext
 	{
-	public:
-		virtual void Init() = 0;
-		virtual void SwapBuffers() = 0;	
+	public:		
+		virtual void Clear() = 0;
+		virtual void SwapBuffers() = 0;	// TODO: Should this be elsewhere?
 	};
 }
